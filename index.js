@@ -4,7 +4,7 @@ const { WebClient } = require("@slack/web-api")
 
 const web = new WebClient(process.env.SLACK_TOKEN)
 const slackEvents = createEventAdapter(process.env.SLACK_SIGNING_SECRET)
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
 slackEvents.on("message", event => {
     if (event.user && event.user !== "UT7PHTKUK") {
