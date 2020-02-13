@@ -10,6 +10,7 @@ slackEvents.on("message", event => {
     if (event.user && event.user !== "UT7PHTKUK") {
         web.users.profile.get({ user: event.user }).then(res => {
             if (res.profile.image_24.includes("d=https")) {
+                console.log(`${res.profile.real_name} just got told.`)
                 return web.chat.postEphemeral({
                     channel: event.channel,
                     user: event.user,
